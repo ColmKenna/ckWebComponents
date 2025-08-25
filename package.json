@@ -1,0 +1,49 @@
+{
+  "name": "@colmkenna/ck-webcomponents",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A web component library built with Rollup",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "serve": "http-server dist -p 8080 -o",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "web-components",
+    "custom-elements",
+    "javascript",
+    "library"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "http-server": "^14.1.1",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.9.6",
+    "tslib": "^2.8.1",
+    "typescript": "^5.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ColmKenna/ckWebComponents.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ColmKenna/ckWebComponents/issues"
+  },
+  "homepage": "https://github.com/ColmKenna/ckWebComponents#readme"
+}

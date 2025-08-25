@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Component Library Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .demo-section {
+            margin: 2rem 0;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #fafafa;
+        }
+        
+        .demo-section h2 {
+            margin-top: 0;
+            color: #555;
+        }
+        
+        code {
+            background: #e8e8e8;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        pre {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        
+        .controls {
+            margin: 1rem 0;
+        }
+        
+        .controls label {
+            display: inline-block;
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .controls input {
+            margin-left: 0.5rem;
+            padding: 0.25rem;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Web Component Library Demo</h1>
+        
+        <div class="demo-section">
+            <h2>Basic Hello World Component</h2>
+            <hello-world></hello-world>
+            
+            <h3>Usage:</h3>
+            <pre><code>&lt;hello-world&gt;&lt;/hello-world&gt;</code></pre>
+        </div>
+        
+        <div class="demo-section">
+            <h2>Customized Hello World Component</h2>
+            <hello-world name="Developer" color="#ff6b6b"></hello-world>
+            
+            <h3>Usage:</h3>
+            <pre><code>&lt;hello-world name="Developer" color="#ff6b6b"&gt;&lt;/hello-world&gt;</code></pre>
+        </div>
+        
+        <div class="demo-section">
+            <h2>Interactive Demo</h2>
+            <div class="controls">
+                <label>
+                    Name: <input type="text" id="nameInput" value="Interactive User" />
+                </label>
+                <label>
+                    Color: <input type="color" id="colorInput" value="#4ecdc4" />
+                </label>
+            </div>
+            <hello-world id="interactiveComponent" name="Interactive User" color="#4ecdc4"></hello-world>
+        </div>
+        
+        <div class="demo-section">
+            <h2>Installation</h2>
+            <p>Configure npm for GitHub Packages by adding to your <code>.npmrc</code>:</p>
+            <pre><code>@colmkenna:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN</code></pre>
+            
+            <p>Then install via npm:</p>
+            <pre><code>npm install @colmkenna/ck-webcomponents</code></pre>
+            
+            <p>Import in your JavaScript:</p>
+            <pre><code>import '@colmkenna/ck-webcomponents';</code></pre>
+        </div>
+    </div>
+
+    <!-- Load the web component library -->
+    <script src="index.js"></script>
+    
+    <script>
+        // Interactive demo functionality
+        const nameInput = document.getElementById('nameInput');
+        const colorInput = document.getElementById('colorInput');
+        const interactiveComponent = document.getElementById('interactiveComponent');
+        
+        nameInput.addEventListener('input', (e) => {
+            interactiveComponent.setAttribute('name', e.target.value);
+        });
+        
+        colorInput.addEventListener('input', (e) => {
+            interactiveComponent.setAttribute('color', e.target.value);
+        });
+    </script>
+</body>
+</html>
