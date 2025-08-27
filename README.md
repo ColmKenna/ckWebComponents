@@ -177,7 +177,75 @@ export { MyComponent } from './components/my-component/my-component.component';
 import './components/my-component/my-component.component';
 ```
 
-## 🚀 Publishing to GitHub Packages
+## 🧪 Development & Testing
+
+This project includes comprehensive testing, linting, and formatting setup.
+
+### Available Scripts
+
+- `npm run build` - Build the project for production
+- `npm run dev` - Start development mode with watch
+- `npm run serve` - Serve the built files for testing
+- `npm test` - Run tests
+- `npm run test:watch` - Run tests in watch mode
+- `npm run test:coverage` - Run tests with coverage report
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Run ESLint with auto-fix
+- `npm run format` - Format code with Prettier
+- `npm run format:check` - Check code formatting
+
+### Testing
+
+Tests are written using Jest with jsdom environment for DOM testing. Test files are located in `__tests__` directories next to the components they test.
+
+```bash
+# Run all tests
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+
+# Run tests in watch mode during development
+npm run test:watch
+```
+
+### Code Quality
+
+The project uses ESLint for code linting and Prettier for code formatting:
+
+```bash
+# Check for linting issues
+npm run lint
+
+# Auto-fix linting issues
+npm run lint:fix
+
+# Format code
+npm run format
+
+# Check if code is properly formatted
+npm run format:check
+```
+
+### Adding New Components
+
+1. Create a new directory under `src/components/`
+2. Add your component TypeScript file
+3. Create a corresponding test directory under `tests/` (e.g., `tests/my-component/`)
+4. Add test files in the test directory
+5. Export your component from `src/index.ts`
+6. Run tests to ensure everything works
+
+Example component structure:
+```
+src/components/my-component/
+├── my-component.ts
+tests/my-component/
+└── my-component.test.ts
+```
+
+## 🚀 Publishing
+ to GitHub Packages
 
 ### Automatic Publishing
 
