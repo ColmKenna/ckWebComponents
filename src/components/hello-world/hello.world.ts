@@ -1,4 +1,4 @@
-export class HelloWorldComponent extends HTMLElement {
+export class HelloWorld extends HTMLElement {
   private shadow: ShadowRoot;
 
   constructor() {
@@ -82,5 +82,5 @@ export class HelloWorldComponent extends HTMLElement {
 
 // Register the custom element
 if (!customElements.get('hello-world')) {
-  customElements.define('hello-world', HelloWorldComponent);
+  customElements.define('hello-world', HelloWorld);
 }

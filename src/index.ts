@@ -1,5 +1,5 @@
 // Export all components
-export { HelloWorldComponent } from './components/hello-world/hello-world.component';
+export { HelloWorld } from './components/hello-world/hello.world';
 
 // Auto-register all components
-import './components/hello-world/hello-world.component';
+import './components/hello-world/hello.world';
