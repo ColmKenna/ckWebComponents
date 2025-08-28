@@ -7,7 +7,8 @@ import prettierConfig from 'eslint-config-prettier';
 
 export default [
   {
-    files: ['tests/**/*.ts'],
+    // Match tests in the top-level tests/ folder and test files inside src (e.g. __tests__ folders and *.test.ts)
+    files: ['tests/**/*.ts', 'src/**/__tests__/**/*.ts', 'src/**/*.test.ts'],
     languageOptions: {
       parser: typescriptParser,
       parserOptions: {

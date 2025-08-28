@@ -1,4 +1,4 @@
-export declare class HelloWorldComponent extends HTMLElement {
+export declare class HelloWorld extends HTMLElement {
     private shadow;
     constructor();
     connectedCallback(): void;
